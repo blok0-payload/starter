@@ -2,13 +2,13 @@
   "blocks": [
     {
       "slug": "code",
-      "path": "blocks/Code/config",
-      "export": "default"
+      "configPath": "blocks/Code/config",
+      "componentPath": "blocks/Code/Component"
     },
     {
       "slug": "mediaBlock",
-      "path": "blocks/MediaBlock/config",
-      "export": "MediaBlock"
+      "configPath": "blocks/MediaBlock/config",
+      "componentPath": "blocks/MediaBlock/Component"
     }
   ]
 }
