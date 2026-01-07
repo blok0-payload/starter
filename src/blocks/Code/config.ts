@@ -31,3 +31,5 @@ export const Code: Block = {
     },
   ],
 }
+
+export default Code

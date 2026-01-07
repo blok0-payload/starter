@@ -21,3 +21,5 @@ export const MediaBlock: Block = {
     },
   ],
 }
+
+export default MediaBlock

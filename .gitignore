@@ -16,6 +16,8 @@
 /.next/
 /out/
 
+bun.lock
+
 # production
 /build
 
@@ -48,3 +50,5 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+db.db

@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    {
+      "slug": "code",
+      "path": "blocks/Code/config",
+      "export": "default"
+    },
+    {
+      "slug": "mediaBlock",
+      "path": "blocks/MediaBlock/config",
+      "export": "MediaBlock"
+    }
+  ]
+}
