@@ -303,7 +303,7 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CodeBlock | MediaBlock)[];
+  layout: (CodeBlock | MediaBlock | ApproachV1Block)[];
   meta?: {
     title?: string | null;
     /**
@@ -408,6 +408,49 @@ export interface MediaBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ApproachV1Block".
+ */
+export interface ApproachV1Block {
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  steps: {
+    content: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    icon: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'approach-v1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -965,6 +1008,7 @@ export interface PagesSelect<T extends boolean = true> {
     | {
         code?: T | CodeBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
+        'approach-v1'?: T | ApproachV1BlockSelect<T>;
       };
   meta?:
     | T
@@ -997,6 +1041,22 @@ export interface CodeBlockSelect<T extends boolean = true> {
 export interface MediaBlockSelect<T extends boolean = true> {
   type?: T;
   media?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ApproachV1Block_select".
+ */
+export interface ApproachV1BlockSelect<T extends boolean = true> {
+  content?: T;
+  steps?:
+    | T
+    | {
+        content?: T;
+        icon?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
