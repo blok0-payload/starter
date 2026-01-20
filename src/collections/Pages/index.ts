@@ -18,7 +18,7 @@ import {
 import { MediaBlock } from "@/blocks/MediaBlock/config";
 
 import Code from "@/blocks/Code/config";
-import ApproachV1 from "@/blocks/Approach-v1/config";
+
 
 
 export const Pages: CollectionConfig<"pages"> = {
@@ -78,7 +78,6 @@ export const Pages: CollectionConfig<"pages"> = {
               blocks: [
                 Code,
                 MediaBlock,
-                ApproachV1
               ],
               required: true,
               admin: {
