@@ -1,8 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@source "../../**/*.{ts,tsx}";
+@source "../../blocks/**/*.{ts,tsx}";
+@source "../../components/**/*.{ts,tsx}";
+@source "../../fields/**/*.{ts,tsx}";
+@source "../../heros/**/*.{ts,tsx}";
 
-@theme {
+@custom-variant dark (&:is(.dark *));
+
+@theme inline{
   --radius: 0.625rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -110,7 +117,3 @@
 }
 
 
-
-body {
-  @apply bg-background text-foreground;
-}

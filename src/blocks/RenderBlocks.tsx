@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import type { Page } from '@/payload-types'
 import { MediaBlock } from './MediaBlock/Component'
 import { CodeBlock } from './Code/Component'
+import { ApproachV1 } from './Approach-v1/Component'
 
 
 
@@ -15,7 +16,7 @@ export type BlockByType<T extends PageBlocksName> =
 const blockComponents: { [K in PageBlocksName]: React.FC<BlockByType<K>> } = {
   mediaBlock: MediaBlock,
   code: CodeBlock,
-
+  "approach-v1": ApproachV1
 }
 
 export const RenderBlocks: React.FC<{
